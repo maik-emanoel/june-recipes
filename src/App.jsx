@@ -45,10 +45,11 @@ export default function App() {
     }
   }
 
+  console.log(recipes.length);
   return (
     <>
       <div className="bg-[#FEECE0] min-h-[50vh] pt-28 pb-14">
-        <div className="max-w-[1073px] w-full h-fit flex gap-14 mx-auto">
+        <div className="max-w-[1073px] w-full h-fit flex gap-14 mx-auto text-[#58190A]">
           <div className="max-w-[409px] w-full h-[293px]">
             <img
               src={recipeImages[count].src}
@@ -69,11 +70,17 @@ export default function App() {
                 size={36}
                 color="#9B6647"
                 onClick={handleDecrease}
+                className={`cursor-pointer active:scale-95 ${
+                  count < 1 ? "disabled" : ""
+                }`}
               />
               <CaretCircleRight
                 size={36}
                 color="#9B6647"
                 onClick={handleIncrease}
+                className={`cursor-pointer active:scale-95 ${
+                  count >= recipes.length - 1 ? "disabled" : ""
+                }`}
               />
             </div>
           </div>
@@ -89,7 +96,9 @@ export default function App() {
             </h2>
             <ul className="list-disc pl-8">
               {recipes[count].ingredients.map((ingredient, index) => (
-                <li key={index} className="text-2xl">{ingredient}</li>
+                <li key={index} className="text-2xl">
+                  {ingredient}
+                </li>
               ))}
             </ul>
           </div>
@@ -100,7 +109,9 @@ export default function App() {
             </h2>
             <ol className="list-decimal pl-8">
               {recipes[count].prepareMode.map((step, index) => (
-                <li key={index} className="text-2xl">{step}</li>
+                <li key={index} className="text-2xl">
+                  {step}
+                </li>
               ))}
             </ol>
           </div>
