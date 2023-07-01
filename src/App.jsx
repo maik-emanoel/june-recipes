@@ -48,9 +48,9 @@ export default function App() {
   console.log(recipes.length);
   return (
     <>
-      <div className="bg-[#FEECE0] min-h-[50vh] pt-28 pb-14">
-        <div className="max-w-[1073px] w-full h-fit flex gap-14 mx-auto text-[#58190A]">
-          <div className="max-w-[409px] w-full h-[293px]">
+      <div className="bg-[#FEECE0] min-h-[50vh] pt-28 pb-14 lg:min-h-0 md:pt-20">
+        <div className="max-w-[1073px] w-[90%] h-fit flex gap-14 mx-auto text-[#58190A] md:flex-col md:items-center md:text-center md:gap-6">
+          <div className="max-w-[409px] w-full h-[293px] lg:h-48">
             <img
               src={recipeImages[count].src}
               alt={recipeImages[count].alt}
@@ -60,12 +60,12 @@ export default function App() {
             />
           </div>
 
-          <div className="relative">
-            <h1 className="text-7xl font-bold leading-normal">
+          <div className="relative pb-11">
+            <h1 className="text-7xl font-bold leading-normal lg:leading-none lg:text-5xl lg:mb-3">
               {recipes[count].name}
             </h1>
-            <p className="text-4xl">{recipes[count].description}</p>
-            <div className="flex absolute bottom-3 gap-2">
+            <p className="text-4xl lg:text-2xl">{recipes[count].description}</p>
+            <div className="flex absolute bottom-3 gap-2 md:left-[50%] md:translate-x-[-50%] md:bottom-0">
               <CaretCircleLeft
                 size={36}
                 color="#9B6647"
@@ -88,28 +88,28 @@ export default function App() {
       </div>
 
       <div className="bg-[#9B6647] text-[#FEECE0] min-h-[50vh]">
-        <div className="max-w-[1100px] w-full h-fit flex gap-14 mx-auto py-[72px]">
-          <div className="flex flex-col gap-4 max-w-[433px] w-full">
-            <h2 className="flex items-center gap-3 text-4xl">
+        <div className="max-w-[1100px] w-[90%] h-fit flex gap-14 mx-auto py-[72px] lg:gap-6 md:flex-col md:items-center">
+          <div className="flex flex-col gap-4 max-w-[433px] w-full md:w-4/5 md:max-w-none sm:!w-[95%]">
+            <h2 className="flex items-center gap-3 text-4xl sm:text-3xl">
               <Basket size={32} />
               Ingredientes
             </h2>
             <ul className="list-disc pl-8">
               {recipes[count].ingredients.map((ingredient, index) => (
-                <li key={index} className="text-2xl">
+                <li key={index} className="text-2xl lg:text-xl">
                   {ingredient}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="flex flex-col gap-4 flex-2">
-            <h2 className="flex items-center gap-3 text-4xl">
+          <div className="flex flex-col gap-4 flex-2 md:w-4/5 sm:!w-[95%]">
+            <h2 className="flex items-center gap-3 text-4xl sm:text-3xl">
               <CookingPot size={32} />
               Modo de preparo
             </h2>
-            <ol className="list-decimal pl-8">
+            <ol className="list-decimal pl-8 sm:pl-7">
               {recipes[count].prepareMode.map((step, index) => (
-                <li key={index} className="text-2xl">
+                <li key={index} className="text-2xl lg:text-xl">
                   {step}
                 </li>
               ))}
