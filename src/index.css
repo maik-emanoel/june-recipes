@@ -5,8 +5,10 @@
 @layer base {
   html, body, #root {
     min-height: 100vh;
+    background: #9B6647;
     font-family: 'Source Serif 4', serif;
     -webkit-tap-highlight-color: transparent;
+    user-select: none;
   }
 
   ul, ol {
