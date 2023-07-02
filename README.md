@@ -2,7 +2,7 @@
 
 ![preview](./.github/preview.png)
 
-[Clique aqui para acessar]()
+[Clique aqui para acessar](https://june-recipes.vercel.app/)
 
 ## 🚀 Tecnologias
 
